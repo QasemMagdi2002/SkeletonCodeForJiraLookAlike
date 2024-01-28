@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/services.css"> <!-- Assuming your stylesheet is in the 'styles' directory -->
+    <style>
+        /* Additional Styling */
+        .content {
+            opacity: 0; /* Start with 0 opacity for fade-in effect */
+            animation: fadeIn 1s ease-in-out forwards; /* Fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(+60px); /* Start slightly above and move down */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(-300px);
+            }
+        }
+    </style>
+    <title>About Us</title>
+</head>
+<body>
+    <div class="banner"> 
+        <div class="navbar">
+            <h1>Jira Look-Alike</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/signup">SignUp</a></li>
+                <li><a href="/login">SignIn</a></li>
+            </ul>
+        </div>
+        <div class="content" style="margin-top: 30px;">
+            <h2>Welcome to Our Story</h2>
+            <p>
+                At Jira Look-Alike, we are passionate about project management and collaboration. 
+                Our mission is to empower teams to work seamlessly, stay aligned, and deliver exceptional results.
+            </p>
+            <p>
+                <span class="highlight-text">Who we are:</span> We are a dedicated team of professionals with diverse skills and backgrounds.
+                Our journey began with a shared vision of making project management a breeze for everyone.
+            </p>
+            <p>
+                <span class="highlight-text">What sets us apart:</span> Our commitment to innovation, user-centric design, and continuous improvement
+                drives us to create a platform that simplifies complex workflows and enhances collaboration.
+            </p>
+            <h3>Our Focus Areas</h3>
+            <div class="modern-boxes">
+                <div class="modern-box">
+                    <h3>Efficiency</h3>
+                    <p>Streamlining processes and tasks to ensure maximum efficiency and productivity.</p>
+                </div>
+                <div class="modern-box">
+                    <h3>Collaboration</h3>
+                    <p>Fostering a culture of collaboration where teams can seamlessly work together towards common goals.</p>
+                </div>
+                <div class="modern-box">
+                    <h3>Innovation</h3>
+                    <p>Constantly innovating to bring you the latest features and technologies in project management.</p>
+                </div>
+                <div class="modern-box">
+                    <h3>User Experience</h3>
+                    <p>Putting user experience at the forefront, ensuring an intuitive and enjoyable platform for all users.</p>
+                </div>
+            </div>
+            <img src="styles/chatbot-icon.png" height="60px" width="60px" class="chatbot-icon" onclick="toggleChatbot()" style="float: right; margin-right: 30px;">
+            <iframe
+                style="float: right; border-radius: 30px; width: 20%; height: 20%; margin-left: 30px;"
+                src="https://www.chatbase.co/chatbot-iframe/IeeOZ6hl7yeqlKDeSSHTX"
+                class="chatbot-iframe"
+                frameborder="0"
+            ></iframe>
+        </div>
+    </div>
+    <footer class="footer" style="height: 250px;">
+        <div class = "container">
+            <div class = "row">
+              <div class="footer-col">
+                <h4>company</h4>
+                <ul>
+                  <li><a href="/about">About Us</a></li>
+                  <li><a href="/services">our services</a></li>
+                  <li><a href="#">privacy policy</a></li>
+                  <li><a href="#">afffiliate program</a></li>
+  
+                </ul>
+              </div>
+  
+              <div class="footer-col">
+                <h4>get help</h4>
+                <ul>
+                  <li><a href="#">FAQ</a></li>
+  
+                </ul>
+              </div>
+  
+              <div class="footer-col">
+                <h4>follow us</h4>
+                <ul>
+                  <div class = "social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div> 
+    </footer>
+    <script>
+        // JavaScript function to toggle the chatbot iframe
+        function toggleChatbot() {
+            const chatbotIframe = document.querySelector('.chatbot-iframe');
+            chatbotIframe.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>

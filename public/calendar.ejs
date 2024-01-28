@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Your Website</title>
+    <link rel="stylesheet" href="styles/calendar.css">
+    <script src="https://kit.fontawesome.com/b3e2cdb926.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+</head>
+<header>
+  <div class="menu-bar">
+    <img src="styles/COMPACT.png" alt="Toggle Menu" onclick="toggleSidebar()" height="24" width="24">
+    <a href="#home">Jira Look-Alike</a>
+    <a href="#about">Your Work</a>
+    <a href="#contact">Project</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="#contact">Plan   </a>
+    <div class="icon-container">
+      <button class="create-btn"><a href="/userprofile">Profile</a></button>
+  </div>
+</div>
+
+
+</header>
+<body>
+
+    <!-- Menu Bar -->
+    
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="dropdown-btn" onclick="toggleDropdown('scrum-dropdown')">Scrum Board &#9660;</div>
+      <div class="dropdown-content" id="scrum-dropdown">
+          <a href="#"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;     Active Sprints</a>
+          <a href="/backlog">  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    Backlog</a>
+      </div>
+      <div class="dropdown-btn" onclick="toggleDropdown('kanban-dropdown')">Kanban Board &#9660;</div>
+      <div class="dropdown-content" id="kanban-dropdown">
+          <a href="#">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Active Sprints</a>
+          <a href="#">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Backlog</a>
+      </div>
+      <hr>
+      <a href="/calendar"id="BAR-L">Task Deadlines</a>
+      <a href="#"id="BAR-L">Components</a>
+      <a href="#"id="BAR-L">Releases</a>
+      <a href="#"id="BAR-L">Project Pages</a>
+      <a href="#"id="BAR-L">Add item</a>
+      <a href="#"id="BAR-L">Project Settings</a>
+      <br><br>
+      <a href="/logout" style="color:rgb(251, 92, 92)">Log Out</a>
+   </div>
+
+
+    <!-- Page Content -->
+
+    <div class="content" id="main">
+        
+          <div class="board">
+            <div class="calendar-container">
+              <div class="calendar-header">
+                <button id="prev-year">Previous Year</button>
+                <button id="prev-month">Previous Month</button>
+                <h1 id="month-year"></h1>
+                <button id="next-month">Next Month</button>
+                <button id="next-year">Next Year</button>
+              </div>
+          
+              <div class="calendar-grid">
+                <div class="day-name">Sun</div>
+                <div class="day-name">Mon</div>
+                <div class="day-name">Tue</div>
+                <div class="day-name">Wed</div>
+                <div class="day-name">Thu</div>
+                <div class="day-name">Fri</div>
+                <div class="day-name">Sat</div>
+          
+                <% for (let i = 0; i < 42; i++) { %>
+                  <div class="day"></div>
+                <% } %>
+              </div>
+            </div>
+            <div id="side">
+              <h2>Task Information</h2>
+              <p id="due-tasks">Due Tasks: 0</p>
+              <p id="overdue-tasks">Overdue Tasks: 0</p>
+            </div>
+            <div id="quote">
+              <h2>Random Quote</h2>
+              <p id="quoteText">Loading...</p>
+              <button id="getQuoteBtn">Get Random Quote</button>
+            </div>
+             <footer class ="footer">
+              <div class = "container">
+                <div class = "row">
+                  <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">our services</a></li>
+                      <li><a href="#">privacy policy</a></li>
+                      <li><a href="#">afffiliate program</a></li>
+                      
+                    </ul>
+                  </div>
+        
+                  <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                      <li><a href="#">FAQ</a></li>
+        
+                    </ul>
+                  </div>
+        
+                  <div class="footer-col">
+                    <h4>follow us</h4>
+                    <ul>
+                      <div class = "social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      </div>
+                    </ul>
+                  </div>
+                </div>
+              </div> 
+          </footer>
+            
+          </div> 
+          
+        </div>
+  <script src="scripts/toggledropdown.js"></script>
+  <script src="scripts/calendar.js"></script>
+  <script>
+    function toggleSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    var main = document.getElementById('main');
+
+    if (sidebar.style.width === '250px') {
+        sidebar.style.width = '0';
+        main.style.marginLeft = '0';
+    } else {
+        sidebar.style.width = '250px';
+        main.style.marginLeft = '250px';
+    }
+
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const getQuoteBtn = document.getElementById('getQuoteBtn');
+      const quoteText = document.getElementById('quoteText');
+  
+      // Array of random quotes
+      const quotes = [
+        "The only way to do great work is to love what you do. - Steve Jobs",
+        "In three words I can sum up everything I've learned about life: it goes on. - Robert Frost",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+        "Your time is limited, don't waste it living someone else's life. - Steve Jobs",
+        "Carry out a random act of kindness, with no expectation of reward, safe in the knowledge that one day someone might do the same for you. - Princess Diana",
+        "Success is not final, failure is not fatal: It is the courage that survives through adversity and comes out successful in the end. - John Wooden",
+        "Creativity is the process of having original ideas that have value. It is a process; it's not random. - Ken Robinson",
+        "Caves are whimsical things, and geology on a local scale is random and unpredictable. - William Stone",
+        // Add more quotes as needed
+      ];
+  
+      // Function to display a random quote
+      function displayRandomQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        quoteText.textContent = quotes[randomIndex];
+      }
+  
+      // Add a click event to the "Get Random Quote" button
+      getQuoteBtn.addEventListener('click', displayRandomQuote);
+  
+      // Display a random quote initially
+      displayRandomQuote();
+    });
+  </script>
+
+   
+   
+</body>
+</html>

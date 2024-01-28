@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/home-style.css">
+    <style>
+      /* Additional Styling */
+      .content {
+          opacity: 0; /* Start with 0 opacity for fade-in effect */
+          animation: fadeIn 1s ease-in-out forwards; /* Fade-in animation */
+      }
+
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+              transform: translateY(+60px); /* Start slightly above and move down */
+          }
+          to {
+              opacity: 1;
+              transform: translateY(-140px);
+          }
+      }
+  </style>
+    <title>Home Page</title>
+</head>
+<body>
+    <div class="banner"> 
+        <div class="navbar">
+            <h1>Jira Look-Alike</h1>
+            <!--<input type="text" class="search-bar" placeholder="Search">-->
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/signup">SignUp</a></li>
+                <li><a href="/login">SignIn</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>PLAN YOUR PROJECT</h1>
+            <p>Move fast, stay aligned, and build better - together</p>
+        </div>
+        <img src="styles/chatbot-icon.png" height="60px" width="60px" class="chatbot-icon" onclick="toggleChatbot()" style="float: right; margin-right: 30px; margin-top: 510px;">
+        <iframe
+            style="float: right; border-radius: 30px; width: 20%; height: 20%; margin-top: 320px;margin-left: 30px;"
+            src="https://www.chatbase.co/chatbot-iframe/IeeOZ6hl7yeqlKDeSSHTX"
+            class="chatbot-iframe"
+            frameborder="0"
+        ></iframe>
+    </div>
+    <footer class ="footer">
+        <div class = "container">
+          <div class = "row">
+            <div class="footer-col">
+              <h4>company</h4>
+              <ul>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/services">our services</a></li>
+                <li><a href="#">privacy policy</a></li>
+                <li><a href="#">afffiliate program</a></li>
+
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>get help</h4>
+              <ul>
+                <li><a href="#">FAQ</a></li>
+
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>follow us</h4>
+              <ul>
+                <div class = "social-links">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div> 
+    </footer>
+  <script>
+    // JavaScript function to toggle the chatbot iframe
+    function toggleChatbot() {
+        const chatbotIframe = document.querySelector('.chatbot-iframe');
+        chatbotIframe.classList.toggle('expanded');
+    }
+  </script>
+</body>
+</html>

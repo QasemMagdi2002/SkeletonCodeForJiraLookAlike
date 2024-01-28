@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/userprofile.css">
+</head>
+<body>
+    <label class="HOME" style="text-decoration: none;"><a href="/dashboard" style="text-decoration: none;color:#fff">HOME</a></label>
+    <div class="profile-container">
+        <div class="profile-picture">
+          <h3>Profile Pic</h3>
+            <div class="interactive-circle" id="imageContainer"></div>
+
+            <input type="file" id="imageUpload" class="hidden-file-input" accept="image/*">
+            <label for="imageUpload" class="upload-button-label">Upload Image</label>
+        </div>
+        <div class="profile-details">
+          <h1>Edit Profile</h1>
+          <form action="/userprofile" method="post">
+              <div class="column">
+                  <label for="firstname">First Name:</label>
+                  <input type="text" id="firstname" name="firstname" value="<%= userData.name %>">
+                  
+                  <label for="username">Username:</label>
+                  <input type="text" id="username" name="username" value="<%= userData.username %>">
+                  
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" name="password" value="">
+              </div>
+              <div class="column">
+                  <label for="lastname">Last Name:</label>
+                  <input type="text" id="lastname" name="lastname" value="<%= userData.last_name %>">
+                  
+                  <label for="email">Email Address:</label>
+                  <input type="email" id="email" name="email" value="<%= userData.email %>">
+                  
+                  <label for="confirmpassword">Confirm Password:</label>
+                  <input type="password" id="confirmpassword" name="confirmpassword" value="">
+                  <p id="passwordError" style="color: red;"></p> <!-- Display error message here -->
+              </div>
+              <div style="grid-column: span 2;"> <!-- This makes the submit button span both columns -->
+                  <input type="submit" value="Update Profile" onclick="updateProfile()">
+              </div>
+          </form>
+          <form action="/delete-profile" method="post">
+            <input type="submit" value="Delete Profile" onclick="return confirm('Are you sure you want to delete your profile? This action is irreversible.');" style="color:red;">
+          </form>
+      </div>
+    </div>
+    
+    <script src="scripts/interaction.js">
+    </script>
+</body>
+</html>
